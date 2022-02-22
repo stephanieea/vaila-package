@@ -24,8 +24,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          npm version patch
+          npm version patch --no-git-tag-version
           npm publish --access public
 ...
