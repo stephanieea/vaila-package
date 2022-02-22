@@ -1,0 +1,22 @@
+{
+  "name": "@stephanieea/package-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index",
+  "files": [
+    "dogs"
+  ],
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephanieea/package-poc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephanieea/package-poc/issues"
+  },
+  "homepage": "https://github.com/stephanieea/package-poc#readme"
+}
