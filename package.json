@@ -1,5 +1,5 @@
 {
-  "name": "@stephanieea/package-poc",
+  "name": "@stephanieea/vaila-package",
   "version": "1.0.0",
   "description": "",
   "main": "./index",
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stephanieea/package-poc.git"
+    "url": "git+https://github.com/stephanieea/vaila-package.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stephanieea/package-poc/issues"
+    "url": "https://github.com/stephanieea/vaila-package/issues"
   },
-  "homepage": "https://github.com/stephanieea/package-poc#readme"
+  "homepage": "https://github.com/stephanieea/vaila-package#readme"
 }
