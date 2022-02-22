@@ -29,7 +29,6 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          CURRENT_VERSION=$(node -p "require('./package.json').version")
-          npm version ${CURRENT_VERSION}-PR-${PR_NUMBER}-${PR_HEAD_SHA:0:7}
+          npm version PR-${PR_NUMBER}-${PR_HEAD_SHA:0:7}
           npm publish --access public 
 ...
