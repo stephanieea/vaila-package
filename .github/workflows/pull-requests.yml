@@ -27,18 +27,19 @@ jobs:
           PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          curl -s -N POST https://api.github.com/graphql \
+          # git config user.name github-actions
+          # git config user.email github-actions@github.com
+          echo $(curl -s -N POST https://api.github.com/graphql \
             -H "Authorization: bearer $NODE_AUTH_TOKEN" \
-            -d '{"query":"query{repository(owner:\"stephanieea\",name:\"vaila-package\"){packages(first:10){nodes{packageType,name,id,versions(first:10){nodes{id,version,readme}}}}}}"}' | jq  '.data.repository.packages.nodes[] | select(.name == "vaila-package").versions.nodes[] | select(.version | contains("-PR-")) | .id' | tr -d '"' | while read object; do \
-              curl -X POST https://api.github.com/graphql \
-                echo $object \
-                -H "Accept: application/vnd.github.package-deletes-preview+json" \
-                -H "Authorization: bearer $NODE_AUTH_TOKEN "\
-                -d '{"query":"mutation { deletePackageVersion(input:{packageVersionId:'\\\"${object}\\\"'}) { success }}"}' \
-            done 
-          npm version prerelease --preid PR-${PR_NUMBER}-${PR_HEAD_SHA:0:7}
-          npm publish --access public 
+            -d '{"query":"query{repository(owner:\"stephanieea\",name:\"vaila-package\"){packages(first:10){nodes{packageType,name,id,versions(first:10){nodes{id,version,readme}}}}}}"}' | jq  '.data.repository.packages.nodes[] | select(.name == "vaila-package").versions.nodes[] | select(.version | contains("-PR-")) | .id' | tr -d '"')
+            # | while read object; do \
+            #   curl -X POST https://api.github.com/graphql \
+            #     echo $object \
+            #     -H "Accept: application/vnd.github.package-deletes-preview+json" \
+            #     -H "Authorization: bearer $NODE_AUTH_TOKEN "\
+            #     -d '{"query":"mutation { deletePackageVersion(input:{packageVersionId:'\\\"${object}\\\"'}) { success }}"}' \
+            # done 
+          # npm version prerelease --preid PR-${PR_NUMBER}-${PR_HEAD_SHA:0:7}
+          # npm publish --access public 
 ...
 
