@@ -39,7 +39,7 @@ jobs:
                 echo $object \
                 -H "Accept: application/vnd.github.package-deletes-preview+json" \
                 -H "Authorization: bearer $NODE_AUTH_TOKEN "\
-                -d '{"query":"mutation { deletePackageVersion(input:{packageVersionId:'\\\"${object}\\\"'}) { success }}"}' \
+                -d '{"query":"mutation { deletePackageVersion(input:{packageVersionId:'\\\"${object}\\\"'}) { success }}"}'; \
             done
           # npm version prerelease --preid PR-${PR_NUMBER}-${PR_HEAD_SHA:0:7}
           # npm publish --access public 
