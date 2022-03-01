@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/stephanieea/vaila-package/issues"
   },
-  "homepage": "https://github.com/stephanieea/vaila-package#readme"
+  "homepage": "https://github.com/stephanieea/vaila-package#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
 }
