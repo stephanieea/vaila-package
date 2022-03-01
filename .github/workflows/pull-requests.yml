@@ -29,9 +29,11 @@ jobs:
         run: |
           # git config user.name github-actions
           # git config user.email github-actions@github.com
-          echo $(curl -s -N POST https://api.github.com/graphql \
+          test=$(curl -s -N POST https://api.github.com/graphql \
             -H "Authorization: bearer $NODE_AUTH_TOKEN" \
             -d '{"query":"query{repository(owner:\"stephanieea\",name:\"vaila-package\"){packages(first:10){nodes{packageType,name,id,versions(first:10){nodes{id,version,readme}}}}}}"}' | jq  '.data.repository.packages.nodes[] | select(.name == "vaila-package").versions.nodes[] | select(.version | contains("-PR-")) | .id' | tr -d '"')
+            echo $test
+            echo "cat"
             # | while read object; do \
             #   curl -X POST https://api.github.com/graphql \
             #     echo $object \
