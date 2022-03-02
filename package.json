@@ -21,5 +21,8 @@
   "homepage": "https://github.com/stephanieea/vaila-package#readme",
   "dependencies": {
     "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4"
   }
 }
