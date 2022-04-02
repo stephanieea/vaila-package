@@ -23,12 +23,13 @@ jobs:
           scope: '@stephanieea'
       - run: |
           echo $try
-          echo "try=$(echo $(try+=why,))" >> $GITHUB_ENV
+          updated="$try"why,
+          echo "try=$(echo updated)" >> $GITHUB_ENV
           echo $try
 
       - run: |
           echo $try
-          echo "try=$(echo $(try+=not,))" >> $GITHUB_ENV
+          echo "try=$(echo "$try"not,))" >> $GITHUB_ENV
           echo $try
       - run: npm ci
       - name: Update and Publish Version
