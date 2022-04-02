@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/stephanieea/vaila-package#readme",
   "dependencies": {
-    "@media-platforms/bonsai": "^0.0.15",
     "jquery": "^3.6.0"
   },
   "devDependencies": {
