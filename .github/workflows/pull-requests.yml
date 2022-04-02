@@ -24,12 +24,13 @@ jobs:
       - run: |
           echo $try
           updated="$try"why,
-          echo "try=$(echo updated)" >> $GITHUB_ENV
+          echo "try=$(echo $updated)" >> $GITHUB_ENV
           echo $try
 
       - run: |
           echo $try
-          echo "try=$(echo "$try"not,))" >> $GITHUB_ENV
+          updated="$try"not,
+          echo "try=$(echo $updated))" >> $GITHUB_ENV
           echo $try
       - run: npm ci
       - name: Update and Publish Version
