@@ -32,6 +32,7 @@ jobs:
           updated="$try"not,
           echo "try=$(echo $updated))" >> $GITHUB_ENV
           echo $try
+      - run: echo $try
       - run: npm ci
       - name: Update and Publish Version
         id: update-publish-version
