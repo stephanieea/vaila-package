@@ -10,6 +10,8 @@ jobs:
     permissions:
       contents: write
       packages: write
+    env:
+      try: ""
     steps:
       - uses: actions/checkout@v2
         with:
@@ -19,6 +21,15 @@ jobs:
           node-version: lts/*
           registry-url: https://npm.pkg.github.com/
           scope: '@stephanieea'
+      - run: |
+          echo $try
+          echo "try=$(echo try+=why,)" >> $GITHUB_ENV
+          echo $try
+
+      - run: |
+          echo $try
+          echo "try=$(echo try+=not,)" >> $GITHUB_ENV
+          echo $try
       - run: npm ci
       - name: Update and Publish Version
         id: update-publish-version
