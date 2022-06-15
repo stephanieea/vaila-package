@@ -7,7 +7,8 @@
     "dogs"
   ],
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "publish": "changeset publish"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/stephanieea/vaila-package#readme",
   "dependencies": {
+    "@changesets/cli": "^2.23.0",
     "jquery": "^3.6.0"
   },
   "devDependencies": {
