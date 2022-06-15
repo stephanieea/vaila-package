@@ -1,6 +1,6 @@
 {
   "name": "@stephanieea/vaila-package",
-  "version": "1.0.8",
+  "version": "1.0.10-canary.1",
   "description": "",
   "main": "./index",
   "files": [
@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/stephanieea/vaila-package/issues"
   },
-  "homepage": "https://github.com/stephanieea/vaila-package#readme"
+  "homepage": "https://github.com/stephanieea/vaila-package#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4"
+  }
 }
